@@ -170,7 +170,6 @@ Filter (< , >)
 
 ex: filter 1,2,3,4,5 by < 4
 
-
 """)
     let answer = readLine()?.lowercased().split(separator: " ")
     guard let answerUnwrapped = answer else {
@@ -207,7 +206,7 @@ ex: filter 1,2,3,4,5 by < 4
             return num < realGivenNumber
             }
         default:
-            print("[error: operator can only be '<' or '>']")
+            print("[error: filter operator must be '<' or '>']")
             print("")
         }
     case "map":
@@ -248,7 +247,7 @@ func myMap(inputArray: [Int], operation: String, transformation: (Int))  -> [Int
             answerArray.append(numbers * transformation)
         case "/":
             answerArray.append(numbers / transformation)
-        default: print("[error: operator must be '*' or '/']")
+        default: print("[error: map operator must be '*' or '/']")
         print("")
         highOrderCalculate()
         }
@@ -267,14 +266,13 @@ func myReduce(inputArray: [Int], operation: String, startingValue: (Int))  -> In
             answer += numbers
         case "*":
             answer *= numbers
-        default: print("[error: operator must be '+' or '*']")
+        default: print("[error: reduce operator must be '+' or '*']")
         print("")
         highOrderCalculate()
         }
     }
     return answer
 }
-
 
 
 
